@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    /* Core Colors */
+    --background: 0 0% 100%;
+    --foreground: 15 23 42; /* slate-900 */
+    --primary: 217 91% 60%; /* blue-500 */
+    --primary-foreground: 0 0% 98%;
+    --muted: 215 20% 65%; /* slate-400 */
+    --muted-foreground: 215 28% 45%; /* slate-600 */
+    --border: 214 32% 91%; /* slate-200 */
+    --ring: 217 91% 60%; /* blue-500 */
+    --card: 0 0% 100%;
+    --card-foreground: 15 23 42;
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 23 42;
+    --secondary: 215 28% 95%; /* slate-100 */
+    --secondary-foreground: 15 23 42;
+    --accent: 215 28% 95%;
+    --accent-foreground: 15 23 42;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --input: 214 32% 91%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222 47% 11%; /* slate-900 */
+    --foreground: 210 40% 98%; /* slate-50 */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --muted: 215 20% 65%;
+    --muted-foreground: 217 33% 69%; /* slate-400 */
+    --border: 217 33% 27%; /* slate-800 */
+    --ring: 217 91% 60%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --secondary: 217 33% 17%; /* slate-800 */
+    --secondary-foreground: 210 40% 98%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --input: 217 33% 27%;
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+  }
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #invoice-preview-wrapper, #invoice-preview-wrapper * {
+    visibility: visible;
+  }
+  #invoice-preview-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background-color: white !important;
+  }
+  #invoice-preview-wrapper > div {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    max-width: 100% !important;
+  }
+}
